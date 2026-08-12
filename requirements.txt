@@ -1,0 +1,27 @@
+# ARGUS AI Enterprise Data Analyst Platform Dependencies
+python-dateutil>=2.8.2
+pyyaml>=6.0.1
+psutil>=5.9.0
+
+# Streamlit UI Framework
+streamlit>=1.35.0
+
+# Database & Data Engines
+sqlalchemy>=2.0.0
+duckdb>=1.0.0
+pandas>=2.2.0
+numpy>=1.26.0
+
+# File Parsers & OCR
+openpyxl>=3.1.2
+pypdf>=4.2.0
+python-docx>=1.1.0
+pillow>=10.3.0
+
+# Visualization & Reporting
+plotly>=5.22.0
+reportlab>=4.2.0
+
+# Machine Learning & Analytics
+scikit-learn>=1.4.0
+statsmodels>=0.14.0
