@@ -58,7 +58,7 @@ class DataCleaningService:
         # 4. Check for currency formatted strings
         for col in string_cols:
             sample_vals = df[col].dropna().astype(str)
-            if sample_vals.str.contains(r"[\$\€\£\₹]", regex=True).any():
+            if sample_vals.str.contains(r"[$€£₹]", regex=True).any():
                 suggestions.append({
                     "type": "clean_currency",
                     "column": col,
