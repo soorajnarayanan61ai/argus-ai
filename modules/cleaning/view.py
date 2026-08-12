@@ -124,4 +124,8 @@ class DataCleaningModule(BaseModule):
 
         with tab5:
             st.subheader("Current Working DataFrame")
-            st.dataframe(df, use_container_width=True)
+            display_df = df.copy()
+            for col in display_df.select_dtypes(include=["object"]).columns:
+                display_df[col] = display_df[col].astype(str)
+
+            st.dataframe(display_df, width="stretch")
