@@ -84,7 +84,7 @@ class QueryService:
                     value = numeric_series.median()
                     return f"The median {col} is {value:,.2f}."
 
-            if "sum" in q or "total of" in q:
+            if "sum" in q or "total" in q:
                 if has_numeric:
                     value = numeric_series.sum()
                     return f"The total {col} is {value:,.2f}."
