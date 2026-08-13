@@ -83,9 +83,9 @@ class DataCleaningModule(BaseModule):
             missing_cols = df.columns[df.isna().any()].tolist()
             col = st.selectbox("Select Column with Missing Values", options=missing_cols)
             if pd.api.types.is_numeric_dtype(df[col]):
-            strategy_options = ["mean", "median", "mode", "constant", "ffill", "bfill"]
+               strategy_options = ["mean", "median", "mode", "constant", "ffill", "bfill"]
             else:
-            strategy_options = ["mode", "constant", "ffill", "bfill"]
+               strategy_options = ["mode", "constant", "ffill", "bfill"]
 
             strategy = st.selectbox("Imputation Strategy", options=strategy_options)
             fill_val = None
