@@ -47,3 +47,13 @@ class QueryService:
             "Try asking about total rows, total columns, missing values, "
             "or duplicate rows."
         )
+        def process_query(self, df: pd.DataFrame, query: str) -> dict:
+        """Compatibility wrapper used by the Profiling UI."""
+        answer = self.answer_question(df, query)
+
+        return {
+            "answer": answer,
+            "evidence": f"Calculated directly from the active dataset ({len(df):,} rows).",
+            "table": None,
+            "chart": None,
+        }
