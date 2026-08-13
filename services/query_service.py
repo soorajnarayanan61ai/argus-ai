@@ -41,7 +41,12 @@ class QueryService:
         if "duplicate" in q:
             duplicates = int(df.duplicated().sum())
             return f"The dataset contains {duplicates:,} duplicate rows."
-
+# Average / Mean for numeric columns
+        if "average" in q or "mean" in q:
+            for col in df.columns:
+                if col.lower() in q and pd.api.types.is_numeric_dtype(df[col]):
+                    value = df[col].mean()
+                    return f"The average {col} is {value:,.2f}."
         return (
             "I could not understand that question yet. "
             "Try asking about total rows, total columns, missing values, "
